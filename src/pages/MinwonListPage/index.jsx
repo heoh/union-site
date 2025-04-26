@@ -1,5 +1,11 @@
+import MainLayout from '@/shared/MainLayout';
+
 function MinwonListPage() {
-  return <div>MinwonListPage</div>;
+  return (
+    <MainLayout>
+      <div>MinwonListPage</div>
+    </MainLayout>
+  );
 }
 
 export default MinwonListPage;

@@ -1,5 +1,11 @@
-function SchedulePage() {
-  return <div>SchedulePage</div>;
+import MainLayout from '@/shared/MainLayout';
+
+function CareerPage() {
+  return (
+    <MainLayout>
+      <div>CareerPage</div>
+    </MainLayout>
+  );
 }
 
-export default SchedulePage;
+export default CareerPage;

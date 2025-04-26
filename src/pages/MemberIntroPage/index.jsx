@@ -1,5 +1,11 @@
+import MainLayout from '@/shared/MainLayout';
+
 function MemberIntroPage() {
-  return <div>MemberIntroPage</div>;
+  return (
+    <MainLayout>
+      <div>MemberIntroPage</div>
+    </MainLayout>
+  );
 }
 
 export default MemberIntroPage;

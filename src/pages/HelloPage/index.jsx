@@ -1,5 +1,11 @@
+import MainLayout from '@/shared/MainLayout';
+
 function HelloPage() {
-  return <div>HelloPage</div>;
+  return (
+    <MainLayout>
+      <div>HelloPage</div>
+    </MainLayout>
+  );
 }
 
 export default HelloPage;

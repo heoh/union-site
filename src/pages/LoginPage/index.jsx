@@ -1,5 +1,11 @@
+import MainLayout from '@/shared/MainLayout';
+
 function LoginPage() {
-  return <div>LoginPage</div>;
+  return (
+    <MainLayout>
+      <div>LoginPage</div>
+    </MainLayout>
+  );
 }
 
 export default LoginPage;

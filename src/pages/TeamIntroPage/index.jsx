@@ -1,5 +1,11 @@
+import MainLayout from '@/shared/MainLayout';
+
 function TeamIntroPage() {
-  return <div>TeamIntroPage</div>;
+  return (
+    <MainLayout>
+      <div>TeamIntroPage</div>
+    </MainLayout>
+  );
 }
 
 export default TeamIntroPage;

@@ -1,5 +1,11 @@
+import MainLayout from '@/shared/MainLayout';
+
 function NojoPage() {
-  return <div>NojoPage</div>;
+  return (
+    <MainLayout>
+      <div>NojoPage</div>
+    </MainLayout>
+  );
 }
 
 export default NojoPage;

@@ -1,5 +1,11 @@
+import MainLayout from '@/shared/MainLayout';
+
 function MinwonSubmitPage() {
-  return <div>MinwonSubmitPage</div>;
+  return (
+    <MainLayout>
+      <div>MinwonSubmitPage</div>
+    </MainLayout>
+  );
 }
 
 export default MinwonSubmitPage;
