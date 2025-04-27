@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'GangwonEduSaeeum_OTFMediumA';
+  src: url('./assets/fonts/GangwonEduSaeeum_OTFMediumA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @theme {
   --font-sans: "'Pretendard Variable'", "sans-serif";
-  --font-gs: "강원교육새음";
+  --font-gs: "GangwonEduSaeeum_OTFMediumA";
   --light-purple: #e8e4ec;
 
   --breakpoint-3xl: 1920px;
