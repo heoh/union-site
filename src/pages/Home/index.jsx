@@ -70,11 +70,11 @@ function MainPage() {
               { icon: "/images/howto.png", label: "사이트 이용 안내" },
               { icon: "/images/goodmember.png", label: "이달의 우수 사원" },
               { icon: "/images/recruit.png", label: "채용 소식" },
-              { icon: "/images/icon4.png", label: "아이콘4" },
-              { icon: "/images/icon5.png", label: "아이콘5" },
-              { icon: "/images/icon6.png", label: "아이콘6" },
-              { icon: "/images/icon7.png", label: "아이콘7" },
-              { icon: "/images/icon8.png", label: "아이콘8" },
+              { icon: "/images/group.png", label: "부서 소개" },
+              { icon: "/images/orga.png", label: "직원 소개" },
+              { icon: "/images/calendar.png", label: "일정" },
+              { icon: "/images/goodexam.png", label: "우수 민원 사례" },
+              { icon: "/images/well.png", label: "직원 복지" },
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-center">
                 <img src={item.icon} alt={item.label} className="w-12 h-12 mb-2 object-contain" />

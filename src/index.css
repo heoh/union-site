@@ -118,3 +118,16 @@ body {
   .status-card.b  { --color: #fbc02d; }
   .status-card.c  { --color: #388e3c; }
   .status-card.d  { --color: #90a4ae; }
+
+.writing-mode-vertical {
+    /* 기본값: 모바일에서는 가로 */
+    writing-mode: horizontal-tb;
+  }
+  
+  /* lg 이상일 때만 세로 */
+@media (min-width: 1024px) {
+    .writing-mode-vertical {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+  }

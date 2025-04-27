@@ -2,22 +2,22 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useState } from 'react';
 import { useUser } from '../user';
+import MemberStatus from './MemberStatus';
+import { useToggle } from 'react-use';
+import NoteModal from './NoteModal';
 
 
 const MainLayout = ({ children }) => {
   const navigate = useNavigate();
   const user = useUser();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, toggleMenu] = useToggle(false);
+  const [isNoteModalOpen, toggleNoteModal] = useToggle(false);
 
-  const handleLogout = () => {
-    user.logout();
-    navigate('/');
-  };
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
   return (
     <div className="min-h-screen bg-white">
+      {/* 쪽지함 */}
+      <NoteModal isOpen={isNoteModalOpen} handleClose={toggleNoteModal} />
+
       {/* 알림바 */}
       <div className="w-full bg-[var(--light-purple)] text-center text-sm py-1 font-sans font-normal">
         게이트 위험 수준 [안전] 단계입니다
@@ -27,26 +27,11 @@ const MainLayout = ({ children }) => {
       <div className="w-full border-b border-b-gray-400 border-b-[0.5px]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between px-8">
           <div className="flex text-base">
-            <button className="px-4 py-2 flex items-center border-l-[0.5px] border-gray-400">조직도 안내</button>
-            <button className="px-4 py-2 flex items-center border-l-[0.5px] border-gray-400">민원 바로가기</button>
-            <button className="px-4 py-2 flex items-center border-l-[0.5px] border-r-[0.5px] border-gray-400">정보공개포털</button>
+            <button className="px-4 py-2 flex items-center border-l-[0.5px] border-gray-400 cursor-pointer">조직도 안내</button>
+            <button className="px-4 py-2 flex items-center border-l-[0.5px] border-gray-400 cursor-pointer">민원 바로가기</button>
+            <Link to="https://flossy-divan-9fd.notion.site/Star-Rain-1b3c22059ac480acbf02c1449aa8a1b7" target='_blank'><button className="px-4 py-2 flex items-center border-l-[0.5px] border-r-[0.5px] border-gray-400 cursor-pointer">정보공개포털</button></Link>
           </div>
-          <div className="hidden lg:block">
-            {user.isLoggedIn() ?
-              <div className="flex">
-                <div><span>{user.name} 님</span> 환영합니다!</div>
-                <button onClick={handleLogout} className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
-                  로그아웃
-                </button>
-              </div>
-              :
-              <Link to="/login">
-                <button className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
-                  구성원 로그인
-                </button>
-              </Link>
-            }
-          </div>
+          <MemberStatus className="hidden lg:block" openNoteModal={toggleNoteModal} />
         </div>
       </div>
 
@@ -146,22 +131,7 @@ const MainLayout = ({ children }) => {
             <div className="max-w-7xl mx-auto flex flex-col items-center p-8 space-y-8">
               <div className="flex flex-col items-center space-y-4 text-lg w-full max-w-xs">
                 <div className='flex flex-col items-center w-full'>
-                  <div>
-                    {user.isLoggedIn() ?
-                      <div className="flex">
-                        <div><span>{user.name} 님</span> 환영합니다!</div>
-                        <button onClick={handleLogout} className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
-                          로그아웃
-                        </button>
-                      </div>
-                      :
-                      <Link to="/login">
-                        <button className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
-                          구성원 로그인
-                        </button>
-                      </Link>
-                    }
-                  </div>
+                  <MemberStatus openNoteModal={toggleNoteModal} />
                 </div>
                 {/* 유니온 소개 */}
                 <div className="flex flex-col items-center w-full">
