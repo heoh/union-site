@@ -3,94 +3,71 @@ import { useEffect, useMemo, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useUser } from '../user';
 import ModalLayout from '../ModalLayout';
+import Markdown from 'react-markdown';
 
 function useMails(user) {
   return useMemo(() => {
     const group_mails = {
       헌터즈: [
         {
-          from: '헌터즈 대장',
-          title: '안녕',
+          from: 'E',
+          title: <>{user.name}에게</>,
           body: (
             <>
-              {user.name}야, 잘 지내니?<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
+              love is open door
             </>
           ),
         },
         {
-          from: '엘사',
-          title: '오~ 쑈열쎄에엛~',
+          from: 'S',
+          title: '회사 주변 회식 맛집 모음',
           body: (
             <>
-              아아~아아~<br />
-              아아~아아~<br />
-              아~아~~~아~~아~~~~ 빰!<br />
+              첨부파일 참조
             </>
           ),
         },
       ],
       이글아이: [
         {
-          from: '이글아이 대장',
-          title: '안녕',
+          from: '인사팀',
+          title: '2025년 노사 협상 결과 안내',
           body: (
             <>
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
+              어쩌구 저쩌구
             </>
           ),
         },
       ],
       울프독: [
         {
-          from: '울프독 대장',
-          title: '안녕',
+          from: '유니온 노동조합 울프독 지부',
+          title: '주 52시간 이상 근무를 강요하는 회사를 규탄한다',
           body: (
             <>
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
+              노측이면 주2일제 합시다
             </>
           ),
         },
       ],
       언더그라운드: [
         {
-          from: '언더그라운드 대장',
-          title: '안녕',
+          from: 'R',
+          title: '지금 제 자리로 오세요',
           body: (
             <>
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
+              진짜 이런 쪽지 받으면 무서워서 울겁니다.
             </>
           ),
         },
       ],
       드라칼: [
         {
-          from: '드라칼 대장',
-          title: '안녕',
+          from: 'J',
+          title: '신입사원 연수 일정 안내',
           body: (
             <>
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
-              우리 만날래 내가 지금 할말이 있어<br />
+              유니온에 입사함을 다시 한 번 축하드립니다.
             </>
           ),
         },

@@ -59,7 +59,7 @@ function LoginPage() {
               <div>
                 <label className="block mb-2 text-sm font-semibold text-[#456EBF]">소속 부서</label>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                  {["헌터즈", "이글아이", "울프독"].map((dept, idx) => (
+                  {["헌터즈", "이글아이", "울프독", "드라칼"].map((dept, idx) => (
                     <button
                       type="button"
                       key={idx}
