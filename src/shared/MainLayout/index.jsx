@@ -31,20 +31,22 @@ const MainLayout = ({ children }) => {
             <button className="px-4 py-2 flex items-center border-l-[0.5px] border-gray-400">민원 바로가기</button>
             <button className="px-4 py-2 flex items-center border-l-[0.5px] border-r-[0.5px] border-gray-400">정보공개포털</button>
           </div>
-          {user.isLoggedIn() ?
-            <div className="flex">
-              <div><span>{user.name} 님</span> 환영합니다!</div>
-              <button onClick={handleLogout} className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
-                로그아웃
-              </button>
-            </div>
-            :
-            <Link to="/login" className='hidden lg:block'>
-              <button className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
-                구성원 로그인
-              </button>
-            </Link>
-          }
+          <div className="hidden lg:block">
+            {user.isLoggedIn() ?
+              <div className="flex">
+                <div><span>{user.name} 님</span> 환영합니다!</div>
+                <button onClick={handleLogout} className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
+                  로그아웃
+                </button>
+              </div>
+              :
+              <Link to="/login">
+                <button className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
+                  구성원 로그인
+                </button>
+              </Link>
+            }
+          </div>
         </div>
       </div>
 
@@ -144,11 +146,22 @@ const MainLayout = ({ children }) => {
             <div className="max-w-7xl mx-auto flex flex-col items-center p-8 space-y-8">
               <div className="flex flex-col items-center space-y-4 text-lg w-full max-w-xs">
                 <div className='flex flex-col items-center w-full'>
-                <Link to="/login">
-                  <button className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
-                    구성원 로그인
-                  </button>
-                </Link>
+                  <div>
+                    {user.isLoggedIn() ?
+                      <div className="flex">
+                        <div><span>{user.name} 님</span> 환영합니다!</div>
+                        <button onClick={handleLogout} className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
+                          로그아웃
+                        </button>
+                      </div>
+                      :
+                      <Link to="/login">
+                        <button className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center">
+                          구성원 로그인
+                        </button>
+                      </Link>
+                    }
+                  </div>
                 </div>
                 {/* 유니온 소개 */}
                 <div className="flex flex-col items-center w-full">
