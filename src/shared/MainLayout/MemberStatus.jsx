@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router';
+import { Mail } from 'lucide-react';
 import { useUser } from '../user';
 
 function MemberStatus({ className, openNoteModal }) {
@@ -16,11 +17,10 @@ function MemberStatus({ className, openNoteModal }) {
       <div className={className}>
         <div className="flex">
           <div>
-            {user.hasNewNotes ? (
-              <button onClick={openNoteModal} className="cursor-pointer">새쪽지함</button>
-            ) : (
-              <button onClick={openNoteModal} className="cursor-pointer">쪽지함</button>
-            )}
+            <button onClick={openNoteModal} className="relative cursor-pointer">
+              <Mail />
+              {user.hasNewNotes && <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white" />}
+            </button>
           </div>
           <div className="">
             <span>{user.name} 님</span> 환영합니다!
