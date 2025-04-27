@@ -12,24 +12,35 @@ import CareerPage from './pages/CareerPage';
 import NojoPage from './pages/NojoPage';
 import MinwonListPage from './pages/MinwonListPage';
 import MinwonSubmitPage from './pages/MinwonSubmitPage';
+import { UserProvider } from './shared/user';
+
+function AppProvider({ children }) {
+  return (
+    <UserProvider>
+      {children}
+    </UserProvider>
+  );
+}
 
 function App() {
   return (
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/hello" element={<HelloPage />} />
-      <Route path="/timeline" element={<TimelinePage />} />
-      <Route path="/teamIntro" element={<TeamIntroPage />} />
-      <Route path="/memberIntro" element={<MemberIntroPage />} />
-      <Route path="/notice" element={<NoticePage />} />
-      <Route path="/schedule" element={<SchedulePage />} />
-      <Route path="/career" element={<CareerPage />} />
-      <Route path="/nojo" element={<NojoPage />} />
-      <Route path="/minwonList" element={<MinwonListPage />} />
-      <Route path="/minwonSubmit" element={<MinwonSubmitPage />} />
-    </Routes>
+    <AppProvider>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/hello" element={<HelloPage />} />
+        <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/teamIntro" element={<TeamIntroPage />} />
+        <Route path="/memberIntro" element={<MemberIntroPage />} />
+        <Route path="/notice" element={<NoticePage />} />
+        <Route path="/schedule" element={<SchedulePage />} />
+        <Route path="/career" element={<CareerPage />} />
+        <Route path="/nojo" element={<NojoPage />} />
+        <Route path="/minwonList" element={<MinwonListPage />} />
+        <Route path="/minwonSubmit" element={<MinwonSubmitPage />} />
+      </Routes>
+    </AppProvider>
   );
 }
 

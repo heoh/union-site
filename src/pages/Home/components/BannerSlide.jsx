@@ -27,7 +27,7 @@ const BannerSlide = () => {
   };
 
   return (
-    <div className="relative w-full h-100 overflow-hidden rounded-md">
+    <div className="relative w-full lg:w-[635px] pt-[56.25%] overflow-hidden rounded-md">
       {/* 이미지 */}
       {images.map((src, index) => (
         <img
@@ -41,15 +41,15 @@ const BannerSlide = () => {
       {/* 좌우 버튼 */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/70 rounded-full p-2"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-md shadow-md rounded-full w-12 h-12 text-lg hover:bg-white transition"
       >
-        ◀
+        &lt;
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 rounded-full p-2"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur-md shadow-md rounded-full w-12 h-12 text-lg hover:bg-white transition"
       >
-        ▶
+        &gt;
       </button>
     </div>
   );
