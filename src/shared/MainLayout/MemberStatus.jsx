@@ -16,15 +16,16 @@ function MemberStatus({ className, openNoteModal }) {
     return (
       <div className={className}>
         <div className="flex">
-          <div>
-            <button onClick={openNoteModal} className="relative cursor-pointer">
-              <Mail />
-              {user.hasNewNotes && <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white" />}
-            </button>
-          </div>
           <div className="">
+            <span>
+              <button onClick={openNoteModal} className="relative cursor-pointer align-middle">
+                <Mail className="w-4" />
+                {user.hasNewNotes && <span className="absolute top-0 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white" />}
+              </button>
+            </span>&nbsp;
+            <span>{user.group}</span>&nbsp;
             <span>{user.name} 님</span> 환영합니다!
-          </div>
+          </div>&nbsp;
           <button
             onClick={handleLogout}
             className="text-xs border-[0.5px] border-gray-400 px-2 py-1 rounded flex items-center cursor-pointer"
